@@ -1,0 +1,22 @@
+---
+      
+Sw1:
+      hostname: 10.52.4.1
+      groups:
+            - ios_switches
+SW2:
+      hostname: 10.52.4.2
+      groups: 
+            - ios_switches
+SW3:
+      hostname: 10.52.4.5
+      groups: 
+            - eos_switches
+Rt1:
+      hostname: 10.52.4.3
+      groups:
+            - ios_routers
+Rt2:
+      hostname: 10.52.4.4
+      groups:
+            - ios_routers
