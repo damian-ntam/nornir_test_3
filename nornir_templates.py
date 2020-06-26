@@ -21,6 +21,7 @@ def eigrp_config(eigrp_task):
     # Deploy that configuration to the device using NAPALM
     eigrp_task.run(task=networking.napalm_configure,
              name="Loading Configuration on the device",
+             dry_run = False,
              replace=False,
              configuration=eigrp_task.host["config"])
 
@@ -31,7 +32,6 @@ def main():
                         F(groups__contains='ios_routers'))
     scp_config = cisco_host.run(task = scp_enable )
     print_result(scp_config)
-    cisco_host.data.dry_run = False
     results = cisco_host.run(task=eigrp_config)
     print_result(results)
 
