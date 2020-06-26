@@ -12,7 +12,7 @@ def lb_function(lb_task):
 eos_host = nr.filter(F(groups__contains='ios_switches') |
                         F(groups__contains='ios_routers'))
 
-targets = eos_host.filter(country = 'usa')
+targets = eos_host.filter(region = 'north' , coast = 'west')
 results = targets.run(task = lb_function)
 
 print_result(results)
