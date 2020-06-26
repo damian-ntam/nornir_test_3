@@ -4,19 +4,42 @@ Sw1:
       hostname: 10.52.4.1
       groups:
             - ios_switches
+      data:
+        country: usa
+        region: north
+        state: washington
+        coast: west
 SW2:
       hostname: 10.52.4.2
       groups: 
             - ios_switches
+      data:
+        country: usa
+        region: north
+        state: minnesota
 SW3:
       hostname: 10.52.4.5
       groups: 
             - eos_switches
+      data:
+        country: usa
+        region: north
+        state: new york
 Rt1:
       hostname: 10.52.4.3
       groups:
             - ios_routers
+      data:
+        country: usa
+        region: south
+        state: texas
 Rt2:
       hostname: 10.52.4.4
       groups:
             - ios_routers
+      data:
+        country: usa
+        region: south
+        state: california
+        coast: west
+
