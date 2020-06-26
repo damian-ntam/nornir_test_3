@@ -5,7 +5,8 @@ from nornir.plugins.functions.text import print_title, print_result
 from nornir.core.filter import F
 
 def scp_enable(lb_task):
-    lb_task.run(task = netmiko_send_config, config_commands = 'ip scp server enable')
+    commands = ['aaa authorization exec default local none', 'ip scp server enable']
+    lb_task.run(task = netmiko_send_config, config_commands = commands)
 
 def eigrp_config(eigrp_task):
     # Transform inventory data to configuration via a template file
