@@ -9,7 +9,10 @@ def lb_function(lb_task):
     lb_task.run(netmiko_send_config , config_file = 'test_conf_filter' )
     lb_task.run(netmiko_send_command , command_string = 'show banner motd')
 
-targets = nr.filter(country = 'usa')
+eos_host = nr.filter(F(groups__contains='ios_switches') |
+                        F(groups__contains='ios_routers'))
+
+targets = eos_host.filter(country = 'usa')
 results = targets.run(task = lb_function)
 
 print_result(results)
