@@ -1,6 +1,6 @@
 from nornir import InitNornir
 from nornir.plugins.tasks import networking, text
-from nornir.plugins.tasks.networking import netmiko_send_command, netmiko_send_config
+from nornir.plugins.tasks.networking import napalm_get, netmiko_send_command, netmiko_send_config
 from nornir.plugins.functions.text import print_title, print_result
 from nornir.core.filter import F
 
