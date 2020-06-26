@@ -9,6 +9,9 @@ Sw1:
         region: north
         state: washington
         coast: west
+        vendor: cisco_switch
+        asn: 123
+        domain: ikea
 SW2:
       hostname: 10.52.4.2
       groups: 
@@ -17,6 +20,9 @@ SW2:
         country: usa
         region: north
         state: minnesota
+        vendor: cisco_switch
+        asn: 123
+        domain: ikea
 SW3:
       hostname: 10.52.4.5
       groups: 
@@ -25,6 +31,9 @@ SW3:
         country: usa
         region: north
         state: new york
+        vendor: arista
+        asn: 123
+        domain: interikea
 Rt1:
       hostname: 10.52.4.3
       groups:
@@ -33,6 +42,9 @@ Rt1:
         country: usa
         region: south
         state: texas
+        vendor: cisco_router
+        asn: 123
+        domain: ikea
 Rt2:
       hostname: 10.52.4.4
       groups:
@@ -42,4 +54,7 @@ Rt2:
         region: south
         state: california
         coast: west
+        vendor: cisco_router
+        asn: 123
+        domain: ikea
 
