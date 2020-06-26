@@ -6,8 +6,8 @@ from nornir.core.filter import F
 nr = InitNornir(config_file = 'config.yaml' , dry_run = True)
 
 def lb_function(lb_task):
-    lb_task.run(netmiko_send_config , config_file = 'test_conf' )
-    lb_task.run(netmiko_send_command , command_string = 'show ip interface brief')
+    lb_task.run(netmiko_send_config , config_file = 'test_conf_filter' )
+    lb_task.run(netmiko_send_command , command_string = 'show banner motd')
 
 targets = nr.filter(country = 'usa')
 results = targets.run(task = lb_function)
