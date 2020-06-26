@@ -1,14 +1,9 @@
 ---
 ios_routers:
     platform: ios
-    username: ""
-    password: ""
+
 ios_switches:
     platform: ios
-    username: ""
-    password: ""
     
 eos_switches:
     platform: eos
-    username: ""
-    password: ""
