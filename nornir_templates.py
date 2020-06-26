@@ -22,7 +22,6 @@ def eigrp_config(eigrp_task):
     eigrp_task.run(task=networking.napalm_configure,
              name="Loading Configuration on the device",
              replace=False,
-             dry_run = True,
              configuration=eigrp_task.host["config"])
 
 
@@ -30,8 +29,9 @@ def main():
     nr = InitNornir(config_file='config.yaml' , dry_run=True )
     cisco_host = nr.filter(F(groups__contains='ios_switches') |
                         F(groups__contains='ios_routers'))
-    #scp_config = cisco_host.run(task = scp_enable )
-    #print_result(scp_config)
+    scp_config = cisco_host.run(task = scp_enable )
+    print_result(scp_config)
+    cisco_host.data.dry_run = False
     results = cisco_host.run(task=eigrp_config)
     print_result(results)
 
