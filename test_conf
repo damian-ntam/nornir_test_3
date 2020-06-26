@@ -1,0 +1,9 @@
+interface loopback 120
+ description automatically added
+!
+line console 0
+ exec-timeout 0
+!
+line vty 0 15 
+ exec-timeout 0 
+
