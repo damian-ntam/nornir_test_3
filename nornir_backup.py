@@ -12,7 +12,6 @@ def backup_config(backup_task):
     pathlib.Path(device_dir).mkdir(exist_ok= True)
     r = backup_task.run( task = networking.napalm_get ,
                          getters = ["config"]) 
-    print(r)
     backup_task.run(
             task = write_file , 
             content = r.result["config"]["running"] , 
