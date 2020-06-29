@@ -12,7 +12,7 @@ Sw1:
         vendor: cisco_switch
         asn: 123
         domain: ikea
-SW2:
+Sw2:
       hostname: 10.52.4.2
       groups: 
             - ios_switches
@@ -23,7 +23,7 @@ SW2:
         vendor: cisco_switch
         asn: 123
         domain: ikea
-SW3:
+Sw3:
       hostname: 10.52.4.5
       groups: 
             - eos_switches
