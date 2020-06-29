@@ -12,8 +12,8 @@ def eigrp_config(eigrp_task):
     # Transform inventory data to configuration via a template file
     r = eigrp_task.run(task=text.template_file,
                  name="EIGRP Configuration",
-                 template="eigrp.j2",
-                 path=f"templates/{eigrp_task.host['vendor']}")
+                 template = "eigrp.j2",
+                 path = f"templates/{eigrp_task.host['vendor']}")
 
     # Save the compiled configuration into a host variable
     eigrp_task.host["config"] = r.result
@@ -22,9 +22,8 @@ def eigrp_config(eigrp_task):
     eigrp_task.run(task=networking.napalm_configure,
              name="Loading Configuration on the device",
              dry_run = False,
-             replace=False,
-             configuration=eigrp_task.host["config"])
-
+             replace = False,
+             configuration = eigrp_task.host["config"])
 
 def main():
     nr = InitNornir(config_file='config.yaml' , dry_run=True )
@@ -32,7 +31,7 @@ def main():
                         F(groups__contains='ios_routers'))
     scp_config = cisco_host.run(task = scp_enable )
     print_result(scp_config)
-    results = cisco_host.run(task=eigrp_config)
+    results = cisco_host.run(task = eigrp_config)
     print_result(results)
 
 if __name__ == '__main__':
