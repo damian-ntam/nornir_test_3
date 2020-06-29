@@ -6,7 +6,7 @@ from datetime import date
 import pathlib
 
 def telemetry_get(telemetry_task):
-    commands = ['show cdp neighbors' , 'show ip interfaces' , 'show ip route']
+    commands = ['show cdp neighbors' , 'show ip interfaces' , 'show ip route' , 'show version']
     for command in commands:
         telemetry_dir = "telemetry-archive"
         device_dir = telemetry_dir + "/" + telemetry_task.host.name
